@@ -1,103 +1,36 @@
-# Portfolio Website - Muhammad Hekal Maulana
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This project contains a personal portfolio website built with React.js and Tailwind CSS for the frontend, and Node.js with Express.js for the backend.
+## Getting Started
 
-## Table of Contents
+First, run the development server:
 
--   [Frontend](#frontend)
--   [Backend](#backend)
--   [Installation](#installation)
--   [Usage](#usage)
-    -   [Frontend Development](#frontend-development)
-    -   [Building the Frontend](#building-the-frontend)
-    -   [Running the Backend Server](#running-the-backend-server)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Frontend
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
--   Built with React.js and Tailwind CSS.
--   Single-page application with a minimalist, modern design and dark theme.
--   Implements smooth scrolling for navigation.
--   Responsive design for various screen sizes.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Backend
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
--   Built with Node.js and Express.js.
--   Serves the static built files of the React frontend application.
+## Learn More
 
-## Installation
+To learn more about Next.js, take a look at the following resources:
 
-1.  **Clone the repository:**
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-    ```shell
-    git clone <repository-url>
-    cd portfolio-hekal
-    ```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-2.  **Install dependencies:**
+## Deploy on Vercel
 
-    -   **Frontend (React):**
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-        ```shell
-        cd frontend
-        npm install
-        ```
-
-    -   **Backend (Node.js):**
-
-        ```shell
-        cd ../backend
-        npm install express
-        ```
-
-## Usage
-
-### Frontend Development
-
-1.  **Navigate to the frontend directory:**
-
-    ```shell
-    cd frontend
-    ```
-
-2.  **Start the development server:**
-
-    ```shell
-    npm start
-    ```
-
-    This will open the React application in your default web browser.
-
-### Building the Frontend
-
-1.  **Navigate to the frontend directory:**
-
-    ```shell
-    cd frontend
-    ```
-
-2.  **Build the application:**
-
-    ```shell
-    npm run build
-    ```
-
-    This will create a `build` directory containing the optimized production build of the React application.
-
-### Running the Backend Server
-
-1.  **Navigate to the backend directory:**
-
-    ```shell
-    cd backend
-    ```
-
-2.  **Start the server:**
-
-    ```shell
-    node server.js
-    ```
-
-    This will start the Node.js server, which will serve the static files from the `build` directory (created in the previous step) of the React application.
-
-    **Note:** You may need to configure the `server.js` file to point to the correct path of your `build` directory.  The provided `server.js` file in this project assumes the `build` folder is located in the parent directory of the `backend` folder.
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

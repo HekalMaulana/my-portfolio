@@ -4,9 +4,9 @@ import { EditButton, DeleteButton } from "./button/button";
 // /components/admin/projectTable
 const ProjectTable = ({ projects }: { projects: Project[] }) => {
   return (
-    <div className="relative w-full overflow-x-auto shadow-md sm:rounded-lg">
-      <table className="w-full text-sm text-left table-fixed rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className="relative w-full overflow-x-auto shadow-md rounded-lg">
+      <table className="w-full text-sm text-left table-fixed rtl:text-right text-gray-500 border-2 border-gray-600">
+        <thead className="text-xs uppercase bg-gray-700 text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-4 w-[5%]">
               No
@@ -45,7 +45,7 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
               <td className="px-4 py-2 truncate">{project.imageUrl}</td>
               <td className="px-4 py-2 truncate">{project.projectUrl}</td>
               <td className="px-4 py-2">{project.tags.join(", ")}</td>
-              <td className="flex justify-center gap-3 py-3 mt-9 items-center">
+              <td className="flex justify-center gap-3 py-3 mt-2 items-center">
                 <EditButton id={project.id} />
                 <DeleteButton id={project.id} />
               </td>

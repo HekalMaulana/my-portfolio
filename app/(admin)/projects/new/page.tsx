@@ -1,9 +1,11 @@
+// /app/(admin)/projects/new/page.tsx
+
 import ProjectForm from "@/components/admin/projectForm";
 
 const newProjectsPage = () => {
   return (
     <div>
-      <ProjectForm />
+      <ProjectForm label="save" />
     </div>
   );
 };

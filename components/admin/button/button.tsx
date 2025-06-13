@@ -1,9 +1,12 @@
+// /components/admin/button/button.tsx
+
 "use client";
 
 import Link from "next/link";
 import { IoAddSharp, IoPencil, IoTrashOutline } from "react-icons/io5";
 import { useFormStatus } from "react-dom";
 import clsx from "clsx";
+import { deleteProject } from "@/actions/projectAction";
 
 export const CreateButton = () => {
   return (
@@ -29,8 +32,10 @@ export const EditButton = ({ id }: { id: string }) => {
 };
 
 export const DeleteButton = ({ id }: { id: string }) => {
+  const deleteProjectById: any = deleteProject.bind(null, id);
+
   return (
-    <form>
+    <form action={deleteProjectById}>
       <button className="rounded-sm border cursor-pointer bg-red-300 border-gray-700 p-1 transition-colors duration-300 hover:bg-gray-300">
         <IoTrashOutline size={25} />
       </button>

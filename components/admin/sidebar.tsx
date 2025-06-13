@@ -1,5 +1,5 @@
 // components/admin/sidebar.tsx
-"use client"; // Menandakan ini adalah Client Component
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -44,11 +44,11 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside id="sidebar" className="w-64 h-screen bg-gray-800">
-      <div className="h-full px-3 py-4 overflow-y-auto">
-        <div className="flex items-center ps-2 mb-5  h-14 mt-14 sm:mt-0">
+    <aside id="sidebar" className="w-64 h-full bg-gray-800">
+      <div className="px-3 py-4">
+        <div className="flex items-center ps-2 mb-5  h-14">
           <span className="self-center text-white text-xl font-semibold whitespace-nowrap">
-            Admin Panel
+            Hekal Panel
           </span>
         </div>
 

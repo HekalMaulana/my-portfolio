@@ -1,13 +1,15 @@
-import ProjectForm from "@/components/admin/projectForm";
-// import { getProjectsById } from "@/lib/data";
+// /app/(admin)/projects/[id]/page.tsx
 
-const editProjectsPage = ({ params }: { params: { id: string } }) => {
-  const id = params.id;
-  //   const contact = await getProjectsById(id);
+import ProjectForm from "@/components/admin/projectForm";
+import { getProjectsById } from "@/lib/data";
+
+const editProjectsPage = async ({ params }: { params: { id: string } }) => {
+  const { id } = await params;
+  const project = await getProjectsById(id);
 
   return (
     <div>
-      <ProjectForm />
+      <ProjectForm initialData={project} label="update" />
     </div>
   );
 };

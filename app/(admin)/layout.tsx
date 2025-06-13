@@ -1,6 +1,6 @@
 // app/(admin)/layout.tsx
+import Breadcrumbs from "@/components/admin/breadCrumbs";
 import Sidebar from "@/components/admin/sidebar";
-import Navbar from "@/components/admin/layout/navbar";
 
 export default function AdminLayout({
   children,
@@ -9,15 +9,16 @@ export default function AdminLayout({
 }) {
   // TODO: Tambahkan logika pengamanan di sini nanti
   return (
-    <div className="flex sm:grid sm:grid-cols-[256px_1fr]">
-      <div className="sm:block hidden">
+    <div className="grid grid-cols-[256px_1fr]">
+      <div className="min-h-screen">
         <Sidebar />
       </div>
-      <div className="">
-        <div className="sm:hidden">
-          <Navbar />
-        </div>
-        <main className="bg-gray-50 pt-24 sm:p-1">{children}</main>
+      <div className="min-h-screen">
+        <div></div>
+        <main className="bg-gray-50 p-8 min-h-screen">
+          <Breadcrumbs />
+          {children}
+        </main>
       </div>
     </div>
   );

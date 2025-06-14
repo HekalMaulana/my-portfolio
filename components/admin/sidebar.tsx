@@ -48,7 +48,7 @@ const Sidebar = () => {
       <div className="px-3 py-4">
         <div className="flex items-center ps-2 mb-5  h-14">
           <span className="self-center text-white text-xl font-semibold whitespace-nowrap">
-            Hekal Panel
+            Admin Panel
           </span>
         </div>
 

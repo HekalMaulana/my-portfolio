@@ -6,7 +6,7 @@ import {
   updateProject,
   type State,
 } from "@/actions/projectAction";
-import { SubmitButton } from "./button/button";
+import { SubmitButton } from "./projectsButton/button";
 import type { Project } from "@/app/generated/prisma";
 import { useActionState } from "react";
 

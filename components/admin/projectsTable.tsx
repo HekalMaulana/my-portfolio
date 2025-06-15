@@ -1,5 +1,5 @@
 import type { Project } from "@/app/generated/prisma";
-import { EditButton, DeleteButton } from "./projectsButton/button";
+import { EditButton, DeleteButton } from "./button";
 
 // /components/admin/projectTable
 const ProjectTable = ({ projects }: { projects: Project[] }) => {

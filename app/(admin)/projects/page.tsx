@@ -2,7 +2,7 @@
 
 import ProjectTable from "@/components/admin/projectsTable";
 import { getProjects } from "@/lib/data";
-import { CreateButton } from "@/components/admin/projectsButton/button";
+import { CreateButton } from "@/components/admin/button";
 
 const DashboardPage = async () => {
   const projects = await getProjects();

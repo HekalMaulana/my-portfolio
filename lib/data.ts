@@ -20,6 +20,29 @@ export const getReviews = async () => {
   }
 };
 
+// Get Settings
+export const getSettings = async () => {
+  try {
+    const settings = await prisma.setting.findMany();
+    return settings;
+  } catch (error) {
+    throw new Error("Failed to fetch settings data");
+  }
+};
+
+// Get SettingsByKey
+export const getSettingsByKey = async (key: string) => {
+  try {
+    const setting = await prisma.setting.findUnique({
+      where: { key },
+    });
+
+    return setting;
+  } catch (error) {
+    throw new Error("Failed to fetch settings data by key");
+  }
+};
+
 // Get ProjectsById
 export const getProjectsById = async (id: string) => {
   try {

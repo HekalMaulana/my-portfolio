@@ -1,5 +1,8 @@
 import type { Project } from "@/app/generated/prisma";
-import { EditButton, DeleteButton } from "./button";
+import {
+  EditButtonProject,
+  DeleteButtonProject,
+} from "@/components/features/projects/ProjectButtons";
 
 // /components/admin/projectTable
 const ProjectTable = ({ projects }: { projects: Project[] }) => {
@@ -46,8 +49,8 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
               <td className="px-4 py-2 truncate">{project.projectUrl}</td>
               <td className="px-4 py-2">{project.tags.join(", ")}</td>
               <td className="flex justify-center gap-3 py-3 mt-2 items-center">
-                <EditButton id={project.id} />
-                <DeleteButton id={project.id} />
+                <EditButtonProject id={project.id} />
+                <DeleteButtonProject id={project.id} />
               </td>
             </tr>
           ))}

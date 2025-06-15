@@ -1,6 +1,6 @@
 // app/(admin)/layout.tsx
-import Breadcrumbs from "@/components/admin/breadCrumbs";
-import Sidebar from "@/components/admin/sidebar";
+import Breadcrumbs from "@/components/layout/BreadCrumbs";
+import Sidebar from "@/components/layout/Sidebar";
 
 export default function AdminLayout({
   children,

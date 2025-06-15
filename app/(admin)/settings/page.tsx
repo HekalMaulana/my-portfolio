@@ -1,8 +1,8 @@
 // /app/(admin)/settings/page.tsx
 
 import { getSettings } from "@/lib/data";
-import { CreateButton } from "@/components/settings/button";
-import SettingGroup from "@/components/settings/settingGroup";
+import { CreateButtonSetting } from "@/components/features/settings/SettingButtons";
+import SettingGroup from "@/components/features/settings/SettingGroup";
 import type { Setting } from "@/app/generated/prisma";
 
 const SettingsPage = async () => {
@@ -27,7 +27,7 @@ const SettingsPage = async () => {
 
   return (
     <div className="flex flex-col gap-8 w-full py-5 px-3">
-      <CreateButton />
+      <CreateButtonSetting />
       {/* Render setiap grup setting */}
       {Object.entries(groupedSettings).map(([groupName, settingsInGroup]) => (
         <SettingGroup

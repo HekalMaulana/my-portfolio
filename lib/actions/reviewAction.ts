@@ -57,10 +57,6 @@ export const createReview = async (
 };
 
 // --- FUNGSI UPDATE ---
-const UpdateReviewSchema = ReviewSchema.extend({
-  id: z.string().cuid(),
-});
-
 export const approveReview = async (id: string) => {
   try {
     await prisma.ulasan.update({

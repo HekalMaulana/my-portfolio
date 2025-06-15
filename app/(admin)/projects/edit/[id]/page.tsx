@@ -1,9 +1,9 @@
 // /app/(admin)/projects/[id]/page.tsx
 
-import ProjectForm from "@/components/admin/projectForm";
+import ProjectForm from "@/components/features/projects/ProjectForm";
 import { getProjectsById } from "@/lib/data";
 
-const editProjectsPage = async ({ params }: { params: { id: string } }) => {
+const EditProjectsPage = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
   const project = await getProjectsById(id);
 
@@ -14,4 +14,4 @@ const editProjectsPage = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default editProjectsPage;
+export default EditProjectsPage;

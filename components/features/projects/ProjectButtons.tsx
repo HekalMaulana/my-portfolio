@@ -1,14 +1,9 @@
-// /components/admin/button/button.tsx
-
-"use client";
-
+import { deleteProject } from "@/lib/actions/projectAction";
 import Link from "next/link";
 import { IoAddSharp, IoPencil, IoTrashOutline } from "react-icons/io5";
-import { useFormStatus } from "react-dom";
-import clsx from "clsx";
-import { deleteProject } from "@/actions/projectAction";
 
-export const CreateButton = () => {
+// Create Button Project
+export const CreateButtonProject = () => {
   return (
     <Link
       href={"/projects/new"}
@@ -20,7 +15,8 @@ export const CreateButton = () => {
   );
 };
 
-export const EditButton = ({ id }: { id: string }) => {
+// Edit Button Project
+export const EditButtonProject = ({ id }: { id: string }) => {
   return (
     <Link
       href={`/projects/edit/${id}`}
@@ -31,7 +27,8 @@ export const EditButton = ({ id }: { id: string }) => {
   );
 };
 
-export const DeleteButton = ({ id }: { id: string }) => {
+// Delete Button Project
+export const DeleteButtonProject = ({ id }: { id: string }) => {
   const deleteProjectById: any = deleteProject.bind(null, id);
 
   return (
@@ -40,25 +37,5 @@ export const DeleteButton = ({ id }: { id: string }) => {
         <IoTrashOutline size={25} />
       </button>
     </form>
-  );
-};
-
-export const SubmitButton = ({ label }: { label: string }) => {
-  const { pending } = useFormStatus();
-  const className = clsx(
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-sm px-5 py-3 text-center w-full",
-    {
-      "opacity-50 cursor-progress": pending,
-    }
-  );
-
-  return (
-    <button type="submit" className={className} disabled={pending}>
-      {label === "save" ? (
-        <span>{pending ? "Saving..." : "Save"}</span>
-      ) : (
-        <span>{pending ? "Updating..." : "Update"}</span>
-      )}
-    </button>
   );
 };

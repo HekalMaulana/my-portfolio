@@ -1,9 +1,9 @@
 // /app/(admin)/reviews/page.tsx
 
-import ReviewsTable from "@/components/reviews/reviewsTable";
+import ReviewsTable from "@/components/features/reviews/ReviewsTable";
 import { getReviews } from "@/lib/data";
 
-const DashboardPage = async () => {
+const ReviewPage = async () => {
   const reviews = await getReviews();
 
   return (
@@ -13,4 +13,4 @@ const DashboardPage = async () => {
   );
 };
 
-export default DashboardPage;
+export default ReviewPage;

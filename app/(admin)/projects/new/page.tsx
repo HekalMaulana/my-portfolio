@@ -1,8 +1,8 @@
 // /app/(admin)/projects/new/page.tsx
 
-import ProjectForm from "@/components/admin/projectForm";
+import ProjectForm from "@/components/features/projects/ProjectForm";
 
-const newProjectsPage = () => {
+const NewProjectsPage = () => {
   return (
     <div>
       <ProjectForm label="save" />
@@ -10,4 +10,4 @@ const newProjectsPage = () => {
   );
 };
 
-export default newProjectsPage;
+export default NewProjectsPage;

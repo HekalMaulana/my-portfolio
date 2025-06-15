@@ -1,13 +1,9 @@
-// /components/settings/button.tsx
-"use client";
-
+import { deleteSetting } from "@/lib/actions/settingAction";
 import Link from "next/link";
 import { IoAddSharp, IoPencil, IoTrashOutline } from "react-icons/io5";
-import { deleteSetting } from "@/actions/settingAction";
-import { useFormStatus } from "react-dom";
-import clsx from "clsx";
 
-export const CreateButton = () => {
+// Create Button Setting
+export const CreateButtonSetting = () => {
   return (
     <Link
       href={"/settings/new"}
@@ -19,7 +15,8 @@ export const CreateButton = () => {
   );
 };
 
-export const EditButton = ({ id }: { id: string }) => {
+// Edit button Setting
+export const EditButtonSetting = ({ id }: { id: string }) => {
   return (
     <Link
       href={`/settings/edit/${id}`}
@@ -30,7 +27,8 @@ export const EditButton = ({ id }: { id: string }) => {
   );
 };
 
-export const DeleteButton = ({ id }: { id: string }) => {
+// Delete Button Setting
+export const DeleteButtonSetting = ({ id }: { id: string }) => {
   const deleteSettingByKey: any = deleteSetting.bind(null, id);
 
   return (
@@ -39,25 +37,5 @@ export const DeleteButton = ({ id }: { id: string }) => {
         <IoTrashOutline size={25} />
       </button>
     </form>
-  );
-};
-
-export const SubmitButton = ({ label }: { label: string }) => {
-  const { pending } = useFormStatus();
-  const className = clsx(
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-sm px-5 py-3 text-center w-full",
-    {
-      "opacity-50 cursor-progress": pending,
-    }
-  );
-
-  return (
-    <button type="submit" className={className} disabled={pending}>
-      {label === "save" ? (
-        <span>{pending ? "Saving..." : "Save"}</span>
-      ) : (
-        <span>{pending ? "Updating..." : "Update"}</span>
-      )}
-    </button>
   );
 };

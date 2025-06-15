@@ -1,12 +1,11 @@
-// /components/admin/updateSettingForm.tsx
+// /components/admin/projectForm.tsx
 "use client";
 
-import { SubmitButton } from "@/components/settings/button";
-import type { Setting } from "@/app/generated/prisma";
+import { SubmitButton } from "@/components/ui/SubmitButton";
+import { createSetting } from "@/lib/actions/settingAction";
 import { useActionState } from "react";
-import { UpdateSetting } from "@/actions/settingAction";
 
-const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
+const CreateSettingForm = () => {
   const availableGroups = [
     "Konten Halaman",
     "Sosial Media & Kontak",
@@ -14,12 +13,11 @@ const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
     "Lainnya",
   ];
 
-  const updateSettingByKey = UpdateSetting.bind(null, setting.key);
-  const [state, formState] = useActionState(updateSettingByKey, null);
+  const [state, formAction] = useActionState(createSetting, null);
 
   return (
     <div>
-      <form action={formState}>
+      <form action={formAction}>
         {/* Key */}
         <div className="mb-5">
           <label
@@ -36,9 +34,7 @@ const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
             type="text"
             name="key"
             id="key"
-            defaultValue={setting.key}
             required
-            readOnly
             placeholder="aboutMeContent"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           />
@@ -59,7 +55,6 @@ const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
           <textarea
             name="value"
             id="value"
-            defaultValue={setting.value}
             required
             placeholder="Value Content..."
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -82,7 +77,6 @@ const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
             type="text"
             name="label"
             id="label"
-            defaultValue={setting.label ?? ""}
             required
             placeholder="Nomor Whatsapp"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -104,7 +98,6 @@ const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
           <select
             name="group"
             id="group"
-            defaultValue={setting.group ?? ""}
             className="w-full rounded-full border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           >
             <option value="" disabled>
@@ -129,4 +122,4 @@ const UpdateSettingForm = ({ setting }: { setting: Setting }) => {
   );
 };
 
-export default UpdateSettingForm;
+export default CreateSettingForm;

@@ -1,4 +1,5 @@
-// components/admin/sidebar.tsx
+// components/layout/Sidebar.tsx
+
 "use client";
 
 import Link from "next/link";

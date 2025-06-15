@@ -1,7 +1,7 @@
 // components/settings/settingGroup.tsx
 
 import type { Setting } from "@/app/generated/prisma";
-import SettingCard from "@/components/settings/settingCard";
+import SettingCard from "@/components/features/settings/SettingCard";
 
 interface SettingsGroupProps {
   groupName: string;

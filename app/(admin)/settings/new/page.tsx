@@ -1,6 +1,6 @@
 // / app/(admin)/settings/new
 
-import CreateSettingForm from "@/components/settings/createSettingForm";
+import CreateSettingForm from "@/components/features/settings/CreateSettingForm";
 
 const CreateSetting = () => {
   return (

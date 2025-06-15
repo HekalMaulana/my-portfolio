@@ -6,7 +6,7 @@ import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 
-const settingSchema = z.object({
+const SettingSchema = z.object({
   key: z.string().min(4),
   value: z.string().min(4),
   label: z.string().min(4),
@@ -14,8 +14,8 @@ const settingSchema = z.object({
 });
 
 // --- FUNGSI CREATE ---
-export const CreateSetting = async (prevState: any, data: FormData) => {
-  const validatedData = settingSchema.safeParse(
+export const createSetting = async (prevState: any, data: FormData) => {
+  const validatedData = SettingSchema.safeParse(
     Object.fromEntries(data.entries())
   );
 
@@ -38,12 +38,12 @@ export const CreateSetting = async (prevState: any, data: FormData) => {
 };
 
 // --- Fungsi Update ---
-export const UpdateSetting = async (
+export const updateSetting = async (
   id: string,
   prevSate: any,
   data: FormData
 ) => {
-  const validatedData = settingSchema.safeParse(
+  const validatedData = SettingSchema.safeParse(
     Object.fromEntries(data.entries())
   );
 

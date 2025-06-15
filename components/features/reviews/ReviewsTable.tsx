@@ -1,5 +1,8 @@
 import type { Ulasan } from "@/app/generated/prisma";
-import { ApproveButton, DeleteButton } from "@/components/reviews/button";
+import {
+  ApproveButtonReview,
+  DeleteButtonReview,
+} from "@/components/features/reviews/ReviewButtons";
 import { IoStar, IoStarOutline } from "react-icons/io5";
 
 // /components/admin/projectTable
@@ -79,8 +82,8 @@ const ReviewsTable = ({ reviews }: { reviews: Ulasan[] }) => {
                 </span>
               </td>
               <td className="flex justify-center gap-3 py-5 items-center text-center">
-                {!review.isApproved && <ApproveButton id={review.id} />}
-                <DeleteButton id={review.id} />
+                {!review.isApproved && <ApproveButtonReview id={review.id} />}
+                <DeleteButtonReview id={review.id} />
               </td>
             </tr>
           ))}

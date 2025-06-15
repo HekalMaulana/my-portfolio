@@ -3,7 +3,10 @@
 
 import type { Setting } from "@/app/generated/prisma";
 import { HiOutlineKey } from "react-icons/hi";
-import { DeleteButton, EditButton } from "@/components/settings/button";
+import {
+  DeleteButtonSetting,
+  EditButtonSetting,
+} from "@/components/features/settings/SettingButtons";
 
 const SettingCard = ({ setting }: { setting: Setting }) => {
   return (
@@ -30,8 +33,8 @@ const SettingCard = ({ setting }: { setting: Setting }) => {
 
       {/* --- AREA AKSI (FOOTER): Dibuat putih bersih sebagai pemisah --- */}
       <div className="flex items-center justify-end gap-3 border-t-2 border-slate-200 bg-white px-6 py-4">
-        <DeleteButton id={setting.key} />
-        <EditButton id={setting.key} />
+        <DeleteButtonSetting id={setting.key} />
+        <EditButtonSetting id={setting.key} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import UpdateSettingForm from "@/components/settings/updateSettingForm";
+import UpdateSettingForm from "@/components/features/settings/UpdateSettingForm";
 import { getSettingsByKey } from "@/lib/data";
 import { notFound } from "next/navigation";
 
